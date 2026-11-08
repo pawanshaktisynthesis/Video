@@ -10,7 +10,8 @@ const hx = c => [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16));
 const mixc = (a, b, k) => { const A = hx(a), B = hx(b); return '#' + A.map((v, i) => Math.round(v + (B[i] - v) * k).toString(16).padStart(2, '0')).join(''); };
 const tint = (c, k) => mixc(c, '#FFFFFF', k), shade = (c, k) => mixc(c, '#2B2320', k);
 // product colour (PawanSetu) stays saffron all film; accent = plum (presenter, stars); grounds rotate
-const SAF = '#E58A3A', SAFD = '#B9652A', PLUM = '#7A4E7E', INK = PAL.ink, PAPER = '#F3E9D2';
+// brand colours from pawansetu.in: indigo-600 tile, amber accent
+const SAF = '#4F46E5', SAFD = '#3730A3', PLUM = '#E39A2E', INK = PAL.ink, PAPER = '#F3E9D2';
 const GROUND = { hook: '#E07A5F', title: '#E3B23C', step: ['#8FB8C9', '#A3AD62', '#4FA9A3'], payoff: '#E07A5F', cta: PAPER };
 const pop = (t, t0, d = .28) => back(seg(t, t0, t0 + d), 1.9);
 const section = t => S.find(s => t >= s.t0 && t < s.t1) || S[S.length - 1];
@@ -70,12 +71,10 @@ function medallionAt(ctx, t, tStamp, x, y, i, r = 104) {
   text(ctx, String(i + 1), 0, r * .38, { font: `${Math.round(r * 1.1)}px Slab`, fill: INK, plate: PAL.white, off: [5, 5], align: 'center' });
   ctx.restore();
 }
-// the PawanSetu mark: a saffron rounded square with a little bridge arch (stand-in logo)
+// the PawanSetu mark (pawansetu.in icon): an indigo rounded square with a white bold "P", printed off-register like everything else
 function mark(ctx, x, y, s, seed = 600) {
-  shape(ctx, rrect(x - 60 * s, y - 60 * s, 120 * s, 120 * s, 26 * s), { fill: SAF, line: 4, seed, grain: .25, shade: [{ pts: rrect(x, y - 60 * s, 60 * s, 120 * s, 0), color: SAFD, alpha: .35 }] });
-  ink(ctx, spline([[x - 38 * s, y + 18 * s], [x, y - 22 * s], [x + 38 * s, y + 18 * s]], false, 8), 9 * s, { seed: seed + 1, color: PAL.white, taper: false });
-  ink(ctx, [[x - 44 * s, y + 20 * s], [x + 44 * s, y + 20 * s]], 7 * s, { seed: seed + 2, color: PAL.white, taper: false });
-  for (const dx of [-20, 0, 20]) ink(ctx, [[x + dx * s, y + 20 * s], [x + dx * s, y + (dx ? -6 : -20) * s]], 4 * s, { seed: seed + 3 + dx, color: PAL.white, taper: false });
+  shape(ctx, rrect(x - 60 * s, y - 60 * s, 120 * s, 120 * s, 26 * s), { fill: SAF, line: 4, seed, grain: .2, shade: [{ pts: rrect(x + 10 * s, y - 60 * s, 50 * s, 120 * s, 0), color: SAFD, alpha: .3 }] });
+  text(ctx, 'P', x, y + 27 * s, { font: `700 ${Math.round(80 * s)}px Jost`, fill: PAL.white, align: 'center' });
 }
 // a hand-tap inside a phone close-up: anticipation lift, tap, follow-through
 function finger(g, t, tt, tx, ty) {
@@ -137,7 +136,7 @@ function sceneTitle(ctx, t, s) {
   const k1 = pop(t, TL.TITLE), k2 = pop(t, TL.TITLE + BEAT);
   for (const [str, y, k] of [['SHOP LOCAL,', 880, k1], ['ONLINE', 1010, k2]]) if (k > 0) { ctx.save(); ctx.translate(W / 2, y - 40); ctx.scale(k, k); text(ctx, str, 0, 40, { font: '120px Slab', fill: INK, plate: SAF, off: [8, 7], align: 'center' }); ctx.restore(); }
   const k3 = pop(t, TL.MINUTES);
-  if (k3 > 0) { ctx.save(); ctx.translate(W / 2, 1120); ctx.scale(k3, k3); shape(ctx, rrect(-200, -46, 400, 92, 46), { fill: PLUM, line: 4, seed: 40, grain: .2 }); text(ctx, 'in minutes', 0, 18, { font: '600 52px Jost', fill: PAL.white, align: 'center' }); ctx.restore(); }
+  if (k3 > 0) { ctx.save(); ctx.translate(W / 2, 1120); ctx.scale(k3, k3); shape(ctx, rrect(-200, -46, 400, 92, 46), { fill: SAF, line: 4, seed: 40, grain: .2 }); text(ctx, 'in minutes', 0, 18, { font: '600 52px Jost', fill: PAL.white, align: 'center' }); ctx.restore(); }
   if (k2 > .9) TX.push({ id: 'title', text: 'SHOP LOCAL, ONLINE', x0: 100, y0: 780, x1: 980, y1: 1060 });
   if (k3 > .9) TX.push({ id: 'mins', text: 'in minutes', x0: 340, y0: 1074, x1: 740, y1: 1166 });
   if (kw >= 1) TX.push({ id: 'kick', text: "here's how to", x0: 200, y0: 630, x1: 880, y1: 750 });
@@ -155,7 +154,7 @@ function screen1(g, t) {
   } else {
     const k = pop(t, TL.TAP1 + .05, .3); g.save(); g.beginPath(); g.rect(-110, -200, 220, 400); g.clip();
     shape(g, ellipse(0, -50, 400 * k, 400 * k, 50), { fill: SAF, line: 0, seed: 830, grain: .2, off: [0, 0] });
-    if (k > .6) { g.save(); g.translate(0, -60); g.scale(.8, .8); mark(g, 0, 0, 1, 840); g.restore(); text(g, 'PawanSetu', 0, 60, { font: '34px Slab', fill: PAL.white, align: 'center' }); text(g, 'shops near you', 0, 100, { font: '500 20px Jost', fill: PAL.white, align: 'center' }); sparkle(g, 70, -130, 18, { fill: PAL.white }); }
+    if (k > .6) { g.save(); g.translate(0, -60); g.scale(.8, .8); mark(g, 0, 0, 1, 840); g.restore(); text(g, 'PawanSetu', 0, 60, { font: '800 36px Jost', fill: PAL.white, align: 'center' }); text(g, 'shops near you', 0, 100, { font: '500 20px Jost', fill: PAL.white, align: 'center' }); sparkle(g, 70, -130, 18, { fill: PAL.white }); }
     g.restore();
   }
   finger(g, t, TL.TAP1, 0, -50);
@@ -224,7 +223,7 @@ function sceneCta(ctx, t, s) {
   const k = pop(t, TL.CTA_MARK, .3);
   if (k > 0) { ctx.save(); ctx.translate(W / 2, 700); ctx.scale(k * 2.1, k * 2.1); star(ctx, 0, 0, 100, { n: 16, inner: .84, fill: PAL.white, off: [0, 0] }); mark(ctx, 0, 0, 1, 960); ctx.restore(); }
   const k2 = pop(t, TL.CTA_NAME);
-  if (k2 > 0) { ctx.save(); ctx.translate(W / 2, 1010); ctx.scale(k2, k2); text(ctx, 'PawanSetu', 0, 40, { font: '128px Slab', fill: INK, plate: SAF, off: [8, 7], align: 'center' }); ctx.restore(); }
+  if (k2 > 0) { ctx.save(); ctx.translate(W / 2, 1010); ctx.scale(k2, k2); text(ctx, 'PawanSetu', 0, 40, { font: '800 132px Jost', fill: INK, align: 'center', track: -2 }); ctx.restore(); }
   const lw = seg(t, TL.CTA_LINE, TL.CTA_LINE + .8);
   if (lw > 0) { ctx.save(); ctx.beginPath(); ctx.rect(0, 1080, 120 + 840 * lw, 160); ctx.clip(); text(ctx, 'your local shops, online', W / 2, 1170, { font: '700 68px Oleo', fill: PLUM, align: 'center' }); ctx.restore(); }
   if (k2 > .9) TX.push({ id: 'cta', text: 'PawanSetu your local shops, online', x0: 120, y0: 920, x1: 960, y1: 1200 });
