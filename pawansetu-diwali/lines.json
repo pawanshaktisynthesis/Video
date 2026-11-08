@@ -1,0 +1,63 @@
+[
+ {
+  "id": "L1",
+  "text": "Every Diwali begins with one small light.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-6%"
+ },
+ {
+  "id": "L2",
+  "text": "Then the whole street wakes up.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L3",
+  "text": "Mithai from the halwai on the corner.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%",
+  "asr": "Mittai from the Halwai on the corner."
+ },
+ {
+  "id": "L4",
+  "text": "Diyas from the potter's lane.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%",
+  "say": "Deeyas, from the potter's lane.",
+  "asr": "Dias from the Potters Lane"
+ },
+ {
+  "id": "L5",
+  "text": "And marigolds, fresh this morning.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L6",
+  "text": "All from shops you know,",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L7",
+  "text": "brought to your door by PawanSetu.",
+  "say": "brought to your door by Pawansetu.",
+  "asr": "Brought to your door by Pavansetu.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L8",
+  "text": "This Diwali, light up the shops around you.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L9",
+  "text": "Happy Diwali, from PawanSetu.",
+  "say": "Happy Diwali, from Pawansetu.",
+  "asr": "Happy Diwali from Pawansetu",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-6%"
+ }
+]
