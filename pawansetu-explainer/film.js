@@ -219,14 +219,18 @@ function scenePayoff(ctx, t, s) {
 function sceneCta(ctx, t, s) {
   const col = GROUND.cta; ctx.fillStyle = col; ctx.fillRect(-500, -500, W + 1000, H + 1000);
   rays(ctx, W / 2, 760, 30, 1500, tint(SAF, .72));
-  for (const [x, y, r] of [[180, 420, 34], [900, 470, 28], [160, 1180, 26], [920, 1150, 36]]) sparkle(ctx, x, y, r, { fill: PLUM });
+  for (const [x, y, r] of [[180, 420, 34], [900, 470, 28], [170, 1420, 26], [910, 1440, 36]]) sparkle(ctx, x, y, r, { fill: PLUM });
   const k = pop(t, TL.CTA_MARK, .3);
   if (k > 0) { ctx.save(); ctx.translate(W / 2, 700); ctx.scale(k * 2.1, k * 2.1); star(ctx, 0, 0, 100, { n: 16, inner: .84, fill: PAL.white, off: [0, 0] }); mark(ctx, 0, 0, 1, 960); ctx.restore(); }
   const k2 = pop(t, TL.CTA_NAME);
   if (k2 > 0) { ctx.save(); ctx.translate(W / 2, 1010); ctx.scale(k2, k2); text(ctx, 'PawanSetu', 0, 40, { font: '800 132px Jost', fill: INK, align: 'center', track: -2 }); ctx.restore(); }
-  const lw = seg(t, TL.CTA_LINE, TL.CTA_LINE + .8);
-  if (lw > 0) { ctx.save(); ctx.beginPath(); ctx.rect(0, 1080, 120 + 840 * lw, 160); ctx.clip(); text(ctx, 'your local shops, online', W / 2, 1170, { font: '700 68px Oleo', fill: PLUM, align: 'center' }); ctx.restore(); }
-  if (k2 > .9) TX.push({ id: 'cta', text: 'PawanSetu your local shops, online', x0: 120, y0: 920, x1: 960, y1: 1200 });
+  // the site's line (pawansetu.in): the second half in amber, as on the site
+  const l1 = seg(t, TL.CTA_LINE, TL.CTA_LINE + .9), l2 = seg(t, TL.CTA_LINE + .6, TL.CTA_LINE + 1.4);
+  if (l1 > 0) { ctx.save(); ctx.beginPath(); ctx.rect(0, 1100, 90 + 900 * l1, 90); ctx.clip(); text(ctx, 'Order from your local Agra shops,', W / 2, 1160, { font: '500 50px Jost', fill: INK, align: 'center' }); ctx.restore(); }
+  if (l2 > 0) { ctx.save(); ctx.beginPath(); ctx.rect(0, 1190, 160 + 760 * l2, 130); ctx.clip(); text(ctx, 'delivered by the shop.', W / 2, 1272, { font: '700 76px Oleo', fill: PLUM, align: 'center' }); ctx.restore();
+    ink(ctx, [[W / 2 - 110, 1312], [W / 2 + 110, 1312]], 7, { seed: 990, color: PLUM, taper: false, upto: l2 }); }
+  if (k2 > .9) TX.push({ id: 'cta', text: 'PawanSetu', x0: 220, y0: 920, x1: 860, y1: 1070 });
+  if (l2 >= 1) TX.push({ id: 'cta2', text: 'Order from your local Agra shops, delivered by the shop.', x0: 100, y0: 1110, x1: 980, y1: 1320 });
   return { focus: [W / 2, 700] };
 }
 function draw(ctx, t, s) { ctx.save(); const r = ({ hook: sceneHook, title: sceneTitle, step: sceneStep, payoff: scenePayoff, cta: sceneCta })[s.kind](ctx, t, s); ctx.restore(); return r || {}; }

@@ -1,10 +1,60 @@
 [
- {"id":"L1","text":"Your favourite shop is just around the corner.","voice":"en-IN-NeerjaNeural","rate":"-4%"},
- {"id":"L2","text":"But today, there's no time to walk there.","voice":"en-IN-NeerjaNeural","rate":"-4%"},
- {"id":"L3","text":"Here's how to shop it online, in minutes.","voice":"en-IN-NeerjaNeural","rate":"-4%"},
- {"id":"L4","text":"Step one. Open PawanSetu.","say":"Step one. Open Pawansetu.","asr":"Step 1. Open Pavansetu.","voice":"en-IN-NeerjaNeural","rate":"-6%"},
- {"id":"L5","text":"Step two. Pick a shop near you.","voice":"en-IN-NeerjaNeural","rate":"-6%"},
- {"id":"L6","text":"Step three. Add what you need, and order.","voice":"en-IN-NeerjaNeural","rate":"-6%"},
- {"id":"L7","text":"That's it. Done in minutes.","voice":"en-IN-NeerjaNeural","rate":"-4%"},
- {"id":"L8","text":"PawanSetu. Your local shops, online.","say":"Pawansetu. Your local shops, online.","asr":"Pawansetu. Your local shops, online.","voice":"en-IN-NeerjaNeural","rate":"-6%"}
+ {
+  "id": "L1",
+  "text": "Your favourite shop is just around the corner.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L2",
+  "text": "But today, there's no time to walk there.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L3",
+  "text": "Here's how to shop it online, in minutes.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L4",
+  "text": "Step one. Open PawanSetu.",
+  "say": "Step one. Open Pawansetu.",
+  "asr": "Step 1. Open Pavansetu.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-6%"
+ },
+ {
+  "id": "L5",
+  "text": "Step two. Pick a shop near you.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-6%"
+ },
+ {
+  "id": "L6",
+  "text": "Step three. Add what you need, and order.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-6%"
+ },
+ {
+  "id": "L7",
+  "text": "That's it. Done in minutes.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L8",
+  "text": "PawanSetu.",
+  "say": "Pawansetu.",
+  "asr": "Pawan Setu",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-6%"
+ },
+ {
+  "id": "L9",
+  "text": "Order from your local Agra shops, delivered by the shop.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ }
 ]

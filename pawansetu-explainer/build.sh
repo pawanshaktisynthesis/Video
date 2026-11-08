@@ -15,4 +15,4 @@ node -e "import('$HERE/timeline.js').then(m=>console.log(JSON.stringify(m.SUBS.m
 "$PY" core/render/srt.py "$HERE/out/srt.json" "$HERE/pawansetu-explainer.srt"
 node core/render/video.mjs "$HERE" --fps 24 --workers 3 $SZ --out "$HERE/out/video.mp4"
 sh core/render/mux.sh "$HERE/out/video.mp4" "$HERE/mix.wav" "$HERE/pawansetu-explainer.mp4" 24 0
-node core/render/still.mjs "$HERE" 44 $SZ --q nosubs=1 --out "$HERE/out/still" --prefix po_ >/dev/null && cp "$HERE/out/still/po_44.jpg" "$HERE/poster.jpg"
+node core/render/still.mjs "$HERE" 45.5 $SZ --q nosubs=1 --out "$HERE/out/still" --prefix po_ >/dev/null && cp "$HERE/out/still/po_45.5.jpg" "$HERE/poster.jpg"

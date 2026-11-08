@@ -73,9 +73,9 @@ groove(SEC[5]['t0'], SEC[6]['t0'], prog=['F', 'Bb'])
 for i, t in enumerate(TL['TICKS']): chord(STEPCH[i], t, .45, 1.2)
 for t, p, d in [(36.0, 'A4', .5), (36.5, 'C5', .5), (37.0, 'F5', 1.0)]: flute(p, t, d)
 # CTA: up a step (G), then ring out
-groove(SEC[6]['t0'], 43.0, prog=['G', 'Am', 'G', 'Am'])
+groove(SEC[6]['t0'], 44.5, prog=['G', 'Am', 'G', 'Am'])
 for t, p, d in [(TL['CTA_NAME'], 'D5', .5), (TL['CTA_NAME'] + .5, 'B4', .5), (TL['CTA_NAME'] + 1.0, 'G4', 1.0), (TL['CTA_LINE'] + 1.25, 'A4', .5), (TL['CTA_LINE'] + 1.75, 'B4', .5), (TL['CTA_LINE'] + 2.25, 'D5', 1.5)]: flute(p, t, d)
-chord(['B3', 'D4', 'F#4', 'A4', 'D5'], 43.0, .5, 3.0); bass('G1', 43.0, .7)
+chord(['B3', 'D4', 'F#4', 'A4', 'D5'], 44.5, .5, 3.0); bass('G1', 44.5, .7)
 mix = sum(st.values()); tt = np.arange(N) / SR
 gate = np.interp(tt, [0, TL['SIL0'] - .02, TL['SIL0'], TL['ORDER'] - .01, TL['ORDER'], DUR + 3], [1, 1, 0, 0, 1, 1])
 mix = (mix * gate[:, None])[:int(DUR * SR)]; mix *= np.clip((DUR - tt[:len(mix)]) / 2.0, 0, 1)[:, None]

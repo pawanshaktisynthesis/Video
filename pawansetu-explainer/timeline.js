@@ -1,5 +1,5 @@
 // One source of truth. 120 BPM: beat .5 s, bar 2 s. Sections, cue times, captions.
-export const BPM = 120, BEAT = .5, DUR = 46.0;
+export const BPM = 120, BEAT = .5, DUR = 47.5;
 export const S = [
   { kind: 'hook', t0: 0, t1: 10.25 },
   { kind: 'title', t0: 10.25, t1: 15.0 },
@@ -15,7 +15,7 @@ export const TL = {
   STAMPS: [14.5, 20.0, 25.5],                       // medallion stamps one beat before each step
   TAP1: 17.0, SHOPS: 22.0, TAP2: 23.0, ITEMS: [27.5, 28.0, 28.5], SIL0: 31.0, ORDER: 31.5,
   TICKS: [34.5, 35.0, 35.5], DONE: 35.5,
-  CTA_MARK: 38.5, CTA_NAME: 39.0, CTA_LINE: 39.75,
+  CTA_MARK: 38.5, CTA_NAME: 39.0, CTA_LINE: 41.2,
 };
 // caption hold ≥ max(1.8, speech + .6, chars/12 + 1)
 export const SUBS = [
@@ -26,5 +26,6 @@ export const SUBS = [
   { id: 'L5', t0: 20.8, t1: 24.5, text: 'Step two. Pick a shop near you.' },
   { id: 'L6', t0: 26.3, t1: 30.8, text: 'Step three. Add what you need, and order.' },
   { id: 'L7', t0: 33.8, t1: 37.3, text: "That's it. Done in minutes." },
-  { id: 'L8', t0: 38.4, t1: 42.6, text: 'PawanSetu. Your local shops, online.' },
+  { id: 'L8', t0: 38.9, t1: 41.15, text: 'PawanSetu.' },
+  { id: 'L9', t0: 41.2, t1: 47.0, text: 'Order from your local Agra shops, delivered by the shop.' },
 ];
