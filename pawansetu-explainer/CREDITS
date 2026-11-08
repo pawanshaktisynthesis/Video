@@ -1,0 +1,10 @@
+PawanSetu — "Shop Local, Online" (customer explainer, 46 s, 1080×1920, 24 fps)
+Picture, score and sound made entirely in code. The PawanSetu mark (a saffron tile with a bridge arch), the app screens and the presenter are stand-ins drawn in code.
+Product claim used, as confirmed by the owner: customers can shop their local stores online, in minutes. Shop and item names are fictional.
+
+Third-party assets
+- Fonts (SIL Open Font License 1.1, fonts/OFL-*.txt, github.com/google/fonts): Alfa Slab One (JM Solé), Oleo Script (soytutype), Jost (Owen Earl / indestructible type*).
+- Voice: Microsoft Edge neural text-to-speech, en-IN-NeerjaNeural, via edge-tts (github.com/rany2/edge-tts, LGPL-3.0). Online service: check Microsoft's terms before commercial use.
+- Drawing engine: engine/toon.js, chars.js, icons.js adapted from the Lemo-Opuscar library (github.com/lemomo-ai/lemo-opuscar), MIT; the presenter restyled (kurta, braid).
+- Instruments: pizzicato bass and music box are physically modelled (Lemo-Opuscar core/audio/pluck.py, MIT); vibraphone, flute, brushes, snaps, foley and room tone are synthesised here. No samples.
+- Speech check: faster-whisper (MIT), Whisper small.en (MIT).

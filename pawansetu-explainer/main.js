@@ -1,0 +1,10 @@
+import { textures } from './engine/toon.js';
+const Q = new URLSearchParams(location.search);
+const g = document.getElementById('c').getContext('2d');
+await Promise.all(['700 80px Oleo', '400 80px Oleo', '80px Slab', '400 40px Jost', '500 40px Jost', '600 40px Jost', '700 40px Jost'].map(f => document.fonts.load(f)));
+textures();
+const film = await import('./film.js');
+window.__g = g; window.DUR = film.DUR; window.EV = film.events();
+window.render = t => { g.setTransform(1, 0, 0, 1, 0, 0); film.render(g, t, Q); };
+window.TEXTS = t => film.texts(t, Q);
+window.READY = true;

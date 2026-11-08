@@ -1,0 +1,31 @@
+1
+00:00:00,400 --> 00:00:05,400
+Your favourite shop is just around the corner.
+
+2
+00:00:05,600 --> 00:00:10,100
+But today, there's no time to walk there.
+
+3
+00:00:10,500 --> 00:00:15,000
+Here's how to shop it online, in minutes.
+
+4
+00:00:15,300 --> 00:00:19,000
+Step one. Open PawanSetu.
+
+5
+00:00:20,800 --> 00:00:24,500
+Step two. Pick a shop near you.
+
+6
+00:00:26,300 --> 00:00:30,800
+Step three. Add what you need, and order.
+
+7
+00:00:33,800 --> 00:00:37,300
+That's it. Done in minutes.
+
+8
+00:00:38,400 --> 00:00:42,600
+PawanSetu. Your local shops, online.
