@@ -1,0 +1,131 @@
+1
+00:00:00,600 --> 00:00:03,322
+These are this week's ten trending projects on GitHub.
+
+2
+00:00:03,402 --> 00:00:08,270
+For each one: what it is, how you use it, and why it helps.
+
+3
+00:00:08,350 --> 00:00:12,600
+Number ten. Scrapling, a web scraping library for Python.
+
+4
+00:00:12,680 --> 00:00:18,388
+Fetch a page, pull out the data you want, or crawl a whole website, even from an AI agent.
+
+5
+00:00:18,468 --> 00:00:25,217
+The benefit: one tool replaces a pile of scrapers, with retries and exports built in.
+
+6
+00:00:25,717 --> 00:00:31,702
+Number nine. Ziwei Doushu, an open-source engine for a traditional Chinese astrology chart.
+
+7
+00:00:31,782 --> 00:00:35,575
+Clone it, run the demo, and it draws the full chart for you.
+
+8
+00:00:35,655 --> 00:00:41,623
+The benefit: builders get the complex rules and a big knowledge base, for free.
+
+9
+00:00:42,123 --> 00:00:47,608
+Number eight. Hallmark, a design skill that stops AI-built websites from looking AI-built.
+
+10
+00:00:47,688 --> 00:00:54,092
+Add it to your coding agent, like Claude Code, then ask it to build, redesign or audit a page.
+
+11
+00:00:54,172 --> 00:01:00,818
+The benefit: original designs, checked in a real browser for contrast and phone layouts.
+
+12
+00:01:03,918 --> 00:01:10,121
+Number seven, and the most stars this week. T3 Code, a control panel for your coding agents.
+
+13
+00:01:10,201 --> 00:01:16,508
+Install it, and steer agents like Claude Code and Codex from your desktop, the web, or your phone.
+
+14
+00:01:16,588 --> 00:01:22,058
+The benefit: one free app for all your agents, even away from your desk.
+
+15
+00:01:22,558 --> 00:01:27,994
+Number six. OpenMausBot, a chat app where every contact is an AI bot.
+
+16
+00:01:28,074 --> 00:01:34,462
+Each bot runs Claude or Codex on your machine, with its own personality, model and cloud computer.
+
+17
+00:01:34,542 --> 00:01:40,891
+The benefit: a team of assistants you can watch at work, approving only what matters.
+
+18
+00:01:41,391 --> 00:01:46,761
+Number five. Claude Code Game Studios turns one Claude session into a game studio.
+
+19
+00:01:46,841 --> 00:01:54,099
+Clone it, type /start, and 49 specialised agents, from directors to testers, guide your project.
+
+20
+00:01:54,179 --> 00:02:00,567
+The benefit: you make every decision, while the team keeps the game organised and catches mistakes.
+
+21
+00:02:01,067 --> 00:02:06,559
+Number four. Anthropic Skills, the public library of Agent Skills for Claude.
+
+22
+00:02:06,639 --> 00:02:11,319
+A skill is a folder of instructions and scripts that Claude loads when a task needs it.
+
+23
+00:02:11,399 --> 00:02:17,228
+The benefit: repeatable results, like documents in your brand style, every time.
+
+24
+00:02:17,728 --> 00:02:22,227
+Number three. Worktrunk, a command-line tool for git worktrees.
+
+25
+00:02:22,307 --> 00:02:28,056
+One command, wt switch, gives each AI agent its own working copy of your code.
+
+26
+00:02:28,136 --> 00:02:33,693
+The benefit: run many agents in parallel, without them stepping on each other.
+
+27
+00:02:34,193 --> 00:02:37,990
+Number two. Claude Mem gives your coding agent a memory.
+
+28
+00:02:38,070 --> 00:02:43,825
+Install it with one command. It takes notes while your agent works, and brings them back next session.
+
+29
+00:02:43,905 --> 00:02:49,072
+The benefit: no more explaining your project from scratch every time.
+
+30
+00:02:49,572 --> 00:02:52,674
+And number one. NVIDIA Auto Ontology.
+
+31
+00:02:52,754 --> 00:02:58,646
+It reads your data's metadata and builds a map of what every table and metric means, for AI agents.
+
+32
+00:02:58,726 --> 00:03:04,843
+The benefit: agents write correct queries, and every answer shows where it came from.
+
+33
+00:03:05,393 --> 00:03:10,134
+That's this week on GitHub. Pick one, and try it this weekend.

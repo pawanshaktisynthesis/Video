@@ -1,0 +1,9 @@
+"This Week on GitHub" — top 10 trending repositories explained (3:11, 1920×1080, 24 fps)
+Data: GitHub weekly trending, fetched 2026-11-08, and each repository's README (see FACTS.md). Repository names, owners and descriptions belong to their authors; all UI in the film is drawn in code (no GitHub interface, logos or screenshots).
+
+Third-party assets
+- Fonts (SIL Open Font License 1.1, fonts/OFL-*.txt, github.com/google/fonts): Inter, Inter Tight, JetBrains Mono.
+- Voice: Microsoft Edge neural text-to-speech, en-US-AvaNeural, via edge-tts (github.com/rany2/edge-tts, LGPL-3.0). Online service: check Microsoft's terms before commercial use.
+- Drawing engine: engine.js from the Lemo-Opuscar library (github.com/lemomo-ai/lemo-opuscar), MIT.
+- Music and UI sounds: synthesised in this project (music/score.py, mix.py). No samples.
+- Speech check: faster-whisper (MIT), Whisper small.en (MIT).
