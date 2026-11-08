@@ -1,0 +1,362 @@
+{
+ "DUR": 191.53,
+ "board0": 0.6,
+ "outro": 184.993,
+ "segs": [
+  {
+   "rank": 10,
+   "t0": 8.0,
+   "card": 8.0,
+   "term": 12.48,
+   "b": [
+    12.68,
+    18.118
+   ],
+   "ben": 18.368,
+   "t1": 24.617
+  },
+  {
+   "rank": 9,
+   "t0": 25.367,
+   "card": 25.367,
+   "term": 31.582,
+   "b": [
+    31.782,
+    35.305
+   ],
+   "ben": 35.555,
+   "t1": 41.023
+  },
+  {
+   "rank": 8,
+   "t0": 41.773,
+   "card": 41.773,
+   "term": 47.488,
+   "b": [
+    47.688,
+    53.822
+   ],
+   "ben": 54.072,
+   "t1": 60.218
+  },
+  {
+   "rank": 7,
+   "t0": 60.968,
+   "giant": 60.968,
+   "card": 63.568,
+   "term": 70.001,
+   "b": [
+    70.201,
+    76.238
+   ],
+   "ben": 76.488,
+   "t1": 81.458
+  },
+  {
+   "rank": 6,
+   "t0": 82.208,
+   "card": 82.208,
+   "term": 87.874,
+   "b": [
+    88.074,
+    94.192
+   ],
+   "ben": 94.442,
+   "t1": 100.291
+  },
+  {
+   "rank": 5,
+   "t0": 101.041,
+   "card": 101.041,
+   "term": 106.641,
+   "b": [
+    106.841,
+    113.829
+   ],
+   "ben": 114.079,
+   "t1": 119.967
+  },
+  {
+   "rank": 4,
+   "t0": 120.717,
+   "card": 120.717,
+   "term": 126.439,
+   "b": [
+    126.639,
+    131.049
+   ],
+   "ben": 131.299,
+   "t1": 136.628
+  },
+  {
+   "rank": 3,
+   "t0": 137.378,
+   "card": 137.378,
+   "term": 142.107,
+   "b": [
+    142.307,
+    147.786
+   ],
+   "ben": 148.036,
+   "t1": 153.093
+  },
+  {
+   "rank": 2,
+   "t0": 153.843,
+   "card": 153.843,
+   "term": 157.87,
+   "b": [
+    158.07,
+    163.555
+   ],
+   "ben": 163.805,
+   "t1": 168.472
+  },
+  {
+   "rank": 1,
+   "t0": 169.222,
+   "card": 169.222,
+   "term": 172.554,
+   "b": [
+    172.754,
+    178.376
+   ],
+   "ben": 178.626,
+   "t1": 184.243
+  }
+ ],
+ "vo": [
+  {
+   "id": "I1",
+   "t": 0.6,
+   "d": 2.502,
+   "text": "These are this week's ten trending projects on GitHub.",
+   "t1": 3.322
+  },
+  {
+   "id": "I2",
+   "t": 3.402,
+   "d": 3.698,
+   "text": "For each one: what it is, how you use it, and why it helps.",
+   "t1": 8.27
+  },
+  {
+   "id": "S10a",
+   "t": 8.35,
+   "d": 3.98,
+   "text": "Number ten. Scrapling, a web scraping library for Python.",
+   "t1": 12.6
+  },
+  {
+   "id": "S10b",
+   "t": 12.68,
+   "d": 5.438,
+   "text": "Fetch a page, pull out the data you want, or crawl a whole website, even from an AI agent.",
+   "t1": 18.388
+  },
+  {
+   "id": "S10c",
+   "t": 18.468,
+   "d": 5.549,
+   "text": "The benefit: one tool replaces a pile of scrapers, with retries and exports built in.",
+   "t1": 25.217
+  },
+  {
+   "id": "S9a",
+   "t": 25.717,
+   "d": 5.715,
+   "text": "Number nine. Ziwei Doushu, an open-source engine for a traditional Chinese astrology chart.",
+   "t1": 31.702
+  },
+  {
+   "id": "S9b",
+   "t": 31.782,
+   "d": 3.523,
+   "text": "Clone it, run the demo, and it draws the full chart for you.",
+   "t1": 35.575
+  },
+  {
+   "id": "S9c",
+   "t": 35.655,
+   "d": 4.768,
+   "text": "The benefit: builders get the complex rules and a big knowledge base, for free.",
+   "t1": 41.623
+  },
+  {
+   "id": "S8a",
+   "t": 42.123,
+   "d": 5.215,
+   "text": "Number eight. Hallmark, a design skill that stops AI-built websites from looking AI-built.",
+   "t1": 47.608
+  },
+  {
+   "id": "S8b",
+   "t": 47.688,
+   "d": 6.134,
+   "text": "Add it to your coding agent, like Claude Code, then ask it to build, redesign or audit a page.",
+   "t1": 54.092
+  },
+  {
+   "id": "S8c",
+   "t": 54.172,
+   "d": 5.446,
+   "text": "The benefit: original designs, checked in a real browser for contrast and phone layouts.",
+   "t1": 60.818
+  },
+  {
+   "id": "S7a",
+   "t": 63.918,
+   "d": 5.933,
+   "text": "Number seven, and the most stars this week. T3 Code, a control panel for your coding agents.",
+   "t1": 70.121
+  },
+  {
+   "id": "S7b",
+   "t": 70.201,
+   "d": 6.037,
+   "text": "Install it, and steer agents like Claude Code and Codex from your desktop, the web, or your phone.",
+   "t1": 76.508
+  },
+  {
+   "id": "S7c",
+   "t": 76.588,
+   "d": 4.27,
+   "text": "The benefit: one free app for all your agents, even away from your desk.",
+   "t1": 82.058
+  },
+  {
+   "id": "S6a",
+   "t": 82.558,
+   "d": 5.166,
+   "text": "Number six. OpenMausBot, a chat app where every contact is an AI bot.",
+   "t1": 87.994
+  },
+  {
+   "id": "S6b",
+   "t": 88.074,
+   "d": 6.118,
+   "text": "Each bot runs Claude or Codex on your machine, with its own personality, model and cloud computer.",
+   "t1": 94.462
+  },
+  {
+   "id": "S6c",
+   "t": 94.542,
+   "d": 5.149,
+   "text": "The benefit: a team of assistants you can watch at work, approving only what matters.",
+   "t1": 100.891
+  },
+  {
+   "id": "S5a",
+   "t": 101.391,
+   "d": 5.1,
+   "text": "Number five. Claude Code Game Studios turns one Claude session into a game studio.",
+   "t1": 106.761
+  },
+  {
+   "id": "S5b",
+   "t": 106.841,
+   "d": 6.988,
+   "text": "Clone it, type /start, and 49 specialised agents, from directors to testers, guide your project.",
+   "t1": 114.099
+  },
+  {
+   "id": "S5c",
+   "t": 114.179,
+   "d": 5.188,
+   "text": "The benefit: you make every decision, while the team keeps the game organised and catches mistakes.",
+   "t1": 120.567
+  },
+  {
+   "id": "S4a",
+   "t": 121.067,
+   "d": 5.222,
+   "text": "Number four. Anthropic Skills, the public library of Agent Skills for Claude.",
+   "t1": 126.559
+  },
+  {
+   "id": "S4b",
+   "t": 126.639,
+   "d": 4.41,
+   "text": "A skill is a folder of instructions and scripts that Claude loads when a task needs it.",
+   "t1": 131.319
+  },
+  {
+   "id": "S4c",
+   "t": 131.399,
+   "d": 4.629,
+   "text": "The benefit: repeatable results, like documents in your brand style, every time.",
+   "t1": 137.228
+  },
+  {
+   "id": "S3a",
+   "t": 137.728,
+   "d": 4.229,
+   "text": "Number three. Worktrunk, a command-line tool for git worktrees.",
+   "t1": 142.227
+  },
+  {
+   "id": "S3b",
+   "t": 142.307,
+   "d": 5.479,
+   "text": "One command, wt switch, gives each AI agent its own working copy of your code.",
+   "t1": 148.056
+  },
+  {
+   "id": "S3c",
+   "t": 148.136,
+   "d": 4.357,
+   "text": "The benefit: run many agents in parallel, without them stepping on each other.",
+   "t1": 153.693
+  },
+  {
+   "id": "S2a",
+   "t": 154.193,
+   "d": 3.527,
+   "text": "Number two. Claude Mem gives your coding agent a memory.",
+   "t1": 157.99
+  },
+  {
+   "id": "S2b",
+   "t": 158.07,
+   "d": 5.485,
+   "text": "Install it with one command. It takes notes while your agent works, and brings them back next session.",
+   "t1": 163.825
+  },
+  {
+   "id": "S2c",
+   "t": 163.905,
+   "d": 3.967,
+   "text": "The benefit: no more explaining your project from scratch every time.",
+   "t1": 169.072
+  },
+  {
+   "id": "S1a",
+   "t": 169.572,
+   "d": 2.832,
+   "text": "And number one. NVIDIA Auto Ontology.",
+   "t1": 172.674
+  },
+  {
+   "id": "S1b",
+   "t": 172.754,
+   "d": 5.622,
+   "text": "It reads your data's metadata and builds a map of what every table and metric means, for AI agents.",
+   "t1": 178.646
+  },
+  {
+   "id": "S1c",
+   "t": 178.726,
+   "d": 4.917,
+   "text": "The benefit: agents write correct queries, and every answer shows where it came from.",
+   "t1": 184.843
+  },
+  {
+   "id": "O1",
+   "t": 185.393,
+   "d": 3.541,
+   "text": "That's this week on GitHub. Pick one, and try it this weekend.",
+   "t1": 190.134
+  }
+ ],
+ "trans": 0.75
+}

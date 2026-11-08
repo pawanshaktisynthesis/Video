@@ -106,7 +106,7 @@ export function makeStudio(renderer, scene) {
         #include <colorspace_fragment>
       }`
   };
-  const floor = new Reflector(new THREE.PlaneGeometry(2000, 2000), { shader: floorShader, textureWidth: 1920, textureHeight: 1080, clipBias: .002, multisample: 4 });
+  const floor = new Reflector(new THREE.PlaneGeometry(2000, 2000), { shader: floorShader, textureWidth: 540, textureHeight: 960, clipBias: .002, multisample: 0 });
   floor.rotation.x = -Math.PI / 2; floor.position.y = FLOOR.y; scene.add(floor);
   // the mirror reflection is updated manually once per frame (otherwise the transmission pre-pass would render it again)
   const reflUpdate = floor.onBeforeRender.bind(floor); floor.onBeforeRender = () => { };

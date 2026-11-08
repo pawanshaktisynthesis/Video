@@ -1,0 +1,216 @@
+[
+ {
+  "id": "I1",
+  "text": "These are this week's ten trending projects on GitHub.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "I2",
+  "text": "For each one: what it is, how you use it, and why it helps.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S10a",
+  "text": "Number ten. Scrapling, a web scraping library for Python.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "10. Scrapling, a web-scraping library for Python"
+ },
+ {
+  "id": "S10b",
+  "text": "Fetch a page, pull out the data you want, or crawl a whole website, even from an AI agent.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S10c",
+  "text": "The benefit: one tool replaces a pile of scrapers, with retries and exports built in.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "The benefit, OneTool replaces a pile of scrapers with retries and exports built-in."
+ },
+ {
+  "id": "S9a",
+  "text": "Number nine. Ziwei Doushu, an open-source engine for a traditional Chinese astrology chart.",
+  "say": "Number nine. Zi Wei Dou Shu, an open-source engine for a traditional Chinese astrology chart.",
+  "asr": "9. Zi Weido Xu, an open source engine for a traditional Chinese astrology chart",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S9b",
+  "text": "Clone it, run the demo, and it draws the full chart for you.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S9c",
+  "text": "The benefit: builders get the complex rules and a big knowledge base, for free.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S8a",
+  "text": "Number eight. Hallmark, a design skill that stops AI-built websites from looking AI-built.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "8. Hallmark, a design skill that stops AI-built websites from looking AI-built"
+ },
+ {
+  "id": "S8b",
+  "text": "Add it to your coding agent, like Claude Code, then ask it to build, redesign or audit a page.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+0%",
+  "asr": "Add it to your coding agent, like Cloud Code, then ask it to build, redesign, or audit a page."
+ },
+ {
+  "id": "S8c",
+  "text": "The benefit: original designs, checked in a real browser for contrast and phone layouts.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S7a",
+  "text": "Number seven, and the most stars this week. T3 Code, a control panel for your coding agents.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S7b",
+  "text": "Install it, and steer agents like Claude Code and Codex from your desktop, the web, or your phone.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "S7c",
+  "text": "The benefit: one free app for all your agents, even away from your desk.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S6a",
+  "text": "Number six. OpenMausBot, a chat app where every contact is an AI bot.",
+  "say": "Number six. Open Maus Bot, a chat app where every contact is an AI bot.",
+  "asr": "6. Open Mousebot, a chat app where every contact is an AI bot",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S6b",
+  "text": "Each bot runs Claude or Codex on your machine, with its own personality, model and cloud computer.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S6c",
+  "text": "The benefit: a team of assistants you can watch at work, approving only what matters.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S5a",
+  "text": "Number five. Claude Code Game Studios turns one Claude session into a game studio.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "5. Cloud Code Game Studios turns one cloud session into a game studio."
+ },
+ {
+  "id": "S5b",
+  "text": "Clone it, type /start, and 49 specialised agents, from directors to testers, guide your project.",
+  "say": "Clone it, type slash start, and forty-nine specialised agents, from directors to testers, guide your project.",
+  "asr": "Clone it. Type slash start and 49 specialized agents from directors to testers. Guide your project.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S5c",
+  "text": "The benefit: you make every decision, while the team keeps the game organised and catches mistakes.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "The benefit, you make every decision while the team keeps the game organized and catches mistakes."
+ },
+ {
+  "id": "S4a",
+  "text": "Number four. Anthropic Skills, the public library of Agent Skills for Claude.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "4. Anthropic skills, the public library of agent skills for Claude"
+ },
+ {
+  "id": "S4b",
+  "text": "A skill is a folder of instructions and scripts that Claude loads when a task needs it.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S4c",
+  "text": "The benefit: repeatable results, like documents in your brand style, every time.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S3a",
+  "text": "Number three. Worktrunk, a command-line tool for git worktrees.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%",
+  "asr": "number three work trunk a command line tool for get work trees"
+ },
+ {
+  "id": "S3b",
+  "text": "One command, wt switch, gives each AI agent its own working copy of your code.",
+  "say": "One command, W T switch, gives each AI agent its own working copy of your code.",
+  "asr": "One command, wtswitch, gives each AI agent its own working copy of your code.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S3c",
+  "text": "The benefit: run many agents in parallel, without them stepping on each other.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S2a",
+  "text": "Number two. Claude Mem gives your coding agent a memory.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S2b",
+  "text": "Install it with one command. It takes notes while your agent works, and brings them back next session.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S2c",
+  "text": "The benefit: no more explaining your project from scratch every time.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S1a",
+  "text": "And number one. NVIDIA Auto Ontology.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S1b",
+  "text": "It reads your data's metadata and builds a map of what every table and metric means, for AI agents.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "S1c",
+  "text": "The benefit: agents write correct queries, and every answer shows where it came from.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ },
+ {
+  "id": "O1",
+  "text": "That's this week on GitHub. Pick one, and try it this weekend.",
+  "voice": "en-US-AvaNeural",
+  "rate": "+8%"
+ }
+]
