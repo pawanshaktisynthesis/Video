@@ -3,3 +3,6 @@ mix.wav
 music/score.wav
 voices/.cache/
 __pycache__/
+mix_hi.wav
+music/score_hi.wav
+voices_hi/.cache/

@@ -1,6 +1,7 @@
 // PawanSetu — "One Small Light". Paper-cut Lightbox, Canvas 2D, 1080×1920 @ 30 fps.
 // Each layer: cut silhouette (holes punched), warm top rim, pulp grain, backlight translucency, soft cast shadow, depth blur. Lights bloom.
-import { TL, SUBS, DUR as D } from './timeline.js';
+import { TL, SUBS, DUR as D, LANG } from './timeline.js';
+const HI = LANG === 'hi';
 export const DUR = D, W = 1080, H = 1920;
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x)), lerp = (a, b, t) => a + (b - a) * t;
 const seg = (t, a, b) => clamp((t - a) / (b - a)), ss = t => { t = clamp(t); return t * t * (3 - 2 * t); };
@@ -24,9 +25,9 @@ const L = {
 // ---------- the street (story units: x along the strip, y = screen px at rest) ----------
 const GROUND = 1580;
 const SHOPS = [
-  { x: 600, kind: 'halwai', sign: 'MITHAI' },
-  { x: 1800, kind: 'potter', sign: 'DIYAS' },
-  { x: 3000, kind: 'florist', sign: 'PHOOL' },
+  { x: 600, kind: 'halwai', sign: 'MITHAI', hi: 'मिठाई' },
+  { x: 1800, kind: 'potter', sign: 'DIYAS', hi: 'दीये' },
+  { x: 3000, kind: 'florist', sign: 'PHOOL', hi: 'फूल' },
 ];
 const HOME = { x0: 5360, x1: 5860, top: 1020, door: 5470, win: { x: 5690, y: 1190 } };
 const RIDE = TL.RIDE;
@@ -190,7 +191,7 @@ const story = (cam, t) => {
         // interior glow, the sign burning through, goods, the shopkeeper
         g.globalAlpha = lit * (isGlow ? .3 : .9); g.fillStyle = '#f7b25a'; g.fillRect(s.x - 200, GROUND - 320, 400, 200);
         g.fillStyle = '#ffe2a0'; g.fillRect(s.x - 150, GROUND - 425, 300, 46);
-        g.globalAlpha = lit; g.fillStyle = L.story.col; g.font = '700 38px Cormorant'; g.textAlign = 'center'; g.letterSpacing = '8px'; g.fillText(s.sign, s.x, GROUND - 389); g.letterSpacing = '0px';
+        g.globalAlpha = lit; g.fillStyle = L.story.col; g.font = HI ? '400 40px Tiro' : '700 38px Cormorant'; g.textAlign = 'center'; g.letterSpacing = HI ? '0px' : '8px'; g.fillText(HI ? s.hi : s.sign, s.x, GROUND - (HI ? 391 : 389)); g.letterSpacing = '0px';
         if (!isGlow) { g.fillStyle = L.story.col; shopkeeper(g, s.x - 60, GROUND - 120, handArm(i) + .25);
           if (s.kind === 'halwai') for (let j = 0; j < 3; j++) { g.beginPath(); g.ellipse(s.x + 60 + j * 46, GROUND - 128, 22, 7, 0, 0, TAU); for (let k = 0; k < 4; k++) circ(g, s.x + 46 + j * 46 + (k % 2) * 14, GROUND - 140 - (k > 1 ? 12 : 0), 8); g.fill(); }
           if (s.kind === 'florist') { g.strokeStyle = L.story.col; g.lineWidth = 2; for (let j = 0; j < 6; j++) { const gx = s.x - 180 + j * 70; g.beginPath(); g.moveTo(gx, GROUND - 320); g.lineTo(gx, GROUND - 190); g.stroke(); } } }
@@ -295,7 +296,7 @@ function curtain(g, cam, t) {   // near-plane wipe: a dark banyan sheet sweeping
 function bursts(g, glow, cam, t) {
   TL.BURSTS.forEach((bt, i) => {
     const up = seg(t, bt - .7, bt), f = seg(t, bt, bt + 2.0); if (t < bt - .7 || f >= 1) return;
-    const cx = [540, 300, 800, 420, 700, 540][i], cy = [520, 380, 430, 640, 300, 470][i] + cam.ty * .3, col = ['#ffd27a', '#ff9f8a', '#ffc46a', '#ffe6a8', '#ff8f6a', '#ffd27a'][i];
+    const cx = (HI ? [540, 250, 830, 300, 790] : [540, 300, 800, 420, 700, 540])[i], cy = (HI ? [520, 280, 300, 400, 250] : [520, 380, 430, 640, 300, 470])[i] + cam.ty * .3, col = ['#ffd27a', '#ff9f8a', '#ffc46a', '#ffe6a8', '#ff8f6a', '#ffd27a'][i];
     for (const c of [g, glow]) { c.save(); c.setTransform(1, 0, 0, 1, 0, 0);
       if (up < 1) { c.globalAlpha = 1; c.fillStyle = GOLD; c.beginPath(); circ(c, cx, lerp(H, cy, eo(up)), 4); c.fill(); }
       else { const r = 230 * eo(f) * (i === 0 ? 1.25 : 1), a = 1 - ss(seg(f, .45, 1)), n = 18;
@@ -308,6 +309,7 @@ function bursts(g, glow, cam, t) {
 
 // ---------- the greeting, as paper strips that write themselves ----------
 function greeting(g, glow, t) {
+  if (HI) return greetingHi(g, glow, t);
   const items = [
     { s: 'शुभ दीपावली', font: '400 92px Tiro', y: 690, t0: TL.HINDI + .3, d: .9, col: '#ffd9a0' },
     { s: 'Happy Diwali', font: '600 128px Cormorant', y: 840, t0: TL.HAPPY, d: 1.1, col: '#fbe9cc' },
@@ -329,11 +331,62 @@ function greeting(g, glow, t) {
   glow.save(); glow.setTransform(1, 0, 0, 1, 0, 0); glow.globalAlpha = .25 * seg(t, TL.HAPPY, TL.HAPPY + 1); glow.fillStyle = '#ffcf8a'; glow.font = '600 128px Cormorant'; glow.textAlign = 'center'; glow.fillText('Happy Diwali', W / 2, 840); glow.restore();
 }
 
+// ---------- Hindi ending: the greeting, then a fireworks logo reveal (sparks gather into the wordmark) ----------
+const LOGO = { s: 'पवनसेतु', font: '400 132px Tiro', y: 770 };
+let TGT = null;
+function logoTargets() {   // ~640 points sampled from the wordmark's pixels, deterministic order
+  const c = document.createElement('canvas'); c.width = W; c.height = H; const x = c.getContext('2d');
+  x.font = LOGO.font; x.textAlign = 'center'; x.fillStyle = '#fff'; x.fillText(LOGO.s, W / 2, LOGO.y);
+  const d = x.getImageData(0, 0, W, H).data, pts = [];
+  for (let y = LOGO.y - 150; y < LOGO.y + 50; y += 3) for (let xx = 100; xx < W - 100; xx += 3) if (d[(y * W + xx) * 4 + 3] > 140) pts.push([xx, y]);
+  pts.sort((a, b) => hash(a[0] * 7.1 + a[1] * 3.3) - hash(b[0] * 7.1 + b[1] * 3.3));
+  return pts.slice(0, 1100);
+}
+function paperText(g, s, font, x, y, f, col, rimCol = '#fff3d6') {   // a paper strip that writes itself from its left edge
+  if (f <= 0) return; g.save(); g.font = font; g.textAlign = 'center'; const tw = g.measureText(s).width;
+  g.beginPath(); g.rect(x - tw / 2 - 10, y - 170, (tw + 20) * eo(f), 240); g.clip();
+  g.fillStyle = 'rgba(5,2,12,.5)'; g.filter = 'blur(8px)'; g.fillText(s, x + 8, y + 12); g.filter = 'none';
+  g.fillStyle = rimCol; g.fillText(s, x, y - 2); g.fillStyle = col; g.fillText(s, x, y); g.restore();
+}
+function greetingHi(g, glow, t) {
+  g.save(); g.setTransform(1, 0, 0, 1, 0, 0);
+  paperText(g, 'शुभ दीपावली', '400 124px Tiro', W / 2, 470, seg(t, TL.HINDI, TL.HINDI + 1.0), '#ffd9a0');
+  paperText(g, 'Happy Diwali', '600 64px Cormorant', W / 2, 560, seg(t, TL.HAPPY, TL.HAPPY + .7), '#fbe9cc');
+  // the logo rocket
+  const up = seg(t, TL.LOGO_LAUNCH, TL.LOGO_BURST), C = [W / 2, LOGO.y - 50];
+  if (t > TL.LOGO_LAUNCH && up < 1) for (const c of [g, glow]) { c.save(); c.setTransform(1, 0, 0, 1, 0, 0); c.fillStyle = GOLD; c.beginPath(); circ(c, C[0], lerp(H, C[1], eo(up)), 5); c.fill(); c.restore(); }
+  // sparks: burst out, then gather into the wordmark, then fade as the paper appears
+  if (t >= TL.LOGO_BURST && t < TL.LOGO_FORM + .8) {
+    if (!TGT) TGT = logoTargets();
+    const pos = (tt, i, tx, ty) => { const f1 = eo(seg(tt, TL.LOGO_BURST, TL.LOGO_BURST + .6)), f2 = eio(seg(tt, TL.LOGO_BURST + .6, TL.LOGO_FORM)), a = hash(i * 1.3) * TAU, r = (140 + hash(i * 2.9) * 340) * f1;
+      return [lerp(C[0] + Math.cos(a) * r, tx, f2), lerp(C[1] + Math.sin(a) * r + f1 * f1 * 40 * (1 - f2), ty, f2)]; };
+    const fa = 1 - ss(seg(t, TL.LOGO_FORM + .1, TL.LOGO_FORM + .8)), fl = 1 - seg(t, TL.LOGO_BURST, TL.LOGO_BURST + .35);
+    for (const c of [g, glow]) { c.save(); c.setTransform(1, 0, 0, 1, 0, 0);
+      if (fl > 0) { const gr = c.createRadialGradient(C[0], C[1], 0, C[0], C[1], 260); gr.addColorStop(0, `rgba(255,240,200,${fl})`); gr.addColorStop(1, 'rgba(255,190,100,0)'); c.fillStyle = gr; c.fillRect(C[0] - 260, C[1] - 260, 520, 520); }
+      c.globalAlpha = fa; c.lineCap = 'round';
+      TGT.forEach(([tx, ty], i) => { const [x, y] = pos(t, i, tx, ty), [px, py] = pos(t - .07, i, tx, ty), tw = .7 + .3 * Math.sin(t * 24 + i);
+        const col = i % 5 === 0 ? '#ffffff' : i % 3 ? GOLD : SAF_L;
+        c.strokeStyle = col; c.globalAlpha = fa * .45; c.lineWidth = 2.2; c.beginPath(); c.moveTo(px, py); c.lineTo(x, y); c.stroke();
+        c.globalAlpha = fa; c.fillStyle = col; c.fillRect(x - 2.4 * tw, y - 2.4 * tw, 4.8 * tw, 4.8 * tw); });
+      c.restore(); }
+  }
+  // the wordmark settles into saffron paper; Latin name and the seal follow
+  const pa = ss(seg(t, TL.LOGO_PAPER, TL.LOGO_PAPER + .5));
+  if (pa > 0) { g.save(); g.globalAlpha = pa; g.font = LOGO.font; g.textAlign = 'center'; g.fillStyle = 'rgba(5,2,12,.5)'; g.filter = 'blur(9px)'; g.fillText(LOGO.s, W / 2 + 9, LOGO.y + 13); g.filter = 'none';
+    g.fillStyle = SAF_L; g.fillText(LOGO.s, W / 2, LOGO.y - 3); g.fillStyle = SAF; g.fillText(LOGO.s, W / 2, LOGO.y); g.restore();
+    glow.save(); glow.setTransform(1, 0, 0, 1, 0, 0); glow.globalAlpha = .35 * pa; glow.font = LOGO.font; glow.textAlign = 'center'; glow.fillStyle = '#ffb25e'; glow.fillText(LOGO.s, W / 2, LOGO.y); glow.restore(); }
+  paperText(g, 'PawanSetu', 'italic 500 50px Cormorant', W / 2, LOGO.y + 72, seg(t, TL.LOGO_LATIN, TL.LOGO_LATIN + .6), '#f6dcb4');
+  const sa = seg(t, TL.LOGO_SEAL, TL.LOGO_SEAL + .3);
+  if (sa > 0) { g.font = LOGO.font; const sx = W / 2 + g.measureText(LOGO.s).width / 2 + 62, sy = LOGO.y - 52, sc = back(sa); g.save(); g.translate(sx, sy); g.scale(sc, sc); g.rotate(-.12); g.fillStyle = SAF; g.beginPath(); circ(g, 0, 0, 40); g.fill(); g.strokeStyle = '#fff1dc'; g.lineWidth = 2.5; g.beginPath(); circ(g, 0, 0, 32); g.stroke(); g.fillStyle = '#fff1dc'; g.font = '400 44px Tiro'; g.textAlign = 'center'; g.fillText('प', 0, 14); g.restore(); }
+  g.restore();
+}
+
 // ---------- subtitles: warm off-white serif on the dark front band ----------
 function subtitle(g, s, t) {
   const a = seg(t, s.t0 - .15, s.t0 + .25) * (1 - seg(t, s.t1, s.t1 + .3)); if (a <= 0) return;
-  g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = a; g.font = '600 54px Cormorant'; g.textAlign = 'center';
+  g.save(); g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = a; g.font = HI ? '400 50px Tiro' : '600 54px Cormorant'; g.textAlign = 'center';
   const tw = g.measureText(s.text).width, y = H - 64;
+  if (tw > 980) console.warn('subtitle too wide', s.id, tw);
   const gr = g.createLinearGradient(0, y - 70, 0, y + 30); gr.addColorStop(0, 'rgba(8,4,16,0)'); gr.addColorStop(.5, 'rgba(8,4,16,.55)'); gr.addColorStop(1, 'rgba(8,4,16,0)'); g.fillStyle = gr; g.fillRect(W / 2 - tw / 2 - 60, y - 70, tw + 120, 100);
   g.shadowColor = 'rgba(0,0,0,.8)'; g.shadowBlur = 10; g.fillStyle = '#f6ead6'; g.fillText(s.text, W / 2, y);
   g.restore();
@@ -371,7 +424,7 @@ export function render(g, t, Q) {
   g.setTransform(1, 0, 0, 1, 0, 0); const vg = g.createRadialGradient(W / 2, H / 2, H * .3, W / 2, H / 2, H * .72); vg.addColorStop(0, 'rgba(0,0,0,0)'); vg.addColorStop(1, 'rgba(0,0,0,.45)'); g.fillStyle = vg; g.fillRect(0, 0, W, H);
   const sub = SUBS.find(s => t >= s.t0 - .15 && t < s.t1 + .3);
   if (sub && !Q.has('nosub')) subtitle(g, sub, t);
-  if (t > TL.HAPPY) TX.push({ id: 'greet', text: 'Happy Diwali from PawanSetu', x0: 160, y0: 600, x1: 920, y1: 950, pass: true });
+  if (t > TL.HAPPY) TX.push({ id: 'greet', text: 'Happy Diwali from PawanSetu', x0: 160, y0: HI ? 380 : 600, x1: 920, y1: HI ? 850 : 950, pass: true });
 }
 export function texts(t, Q) { render(window.__g, t, Q); return TX; }
 
@@ -385,6 +438,7 @@ export function events() {
   e(TL.HANDOVER, 'paper', { i: 4 }); e(TL.LID, 'lid'); e(TL.LID, 'shimmer');
   TL.DIYAS.forEach((t, i) => e(t, 'diya', { i }));
   TL.BURSTS.forEach((t, i) => { e(t - .7, 'launch', { i }); e(t, 'burst', { i }); });
-  e(TL.HINDI + .3, 'paper', { i: 5 }); e(TL.HAPPY, 'paper', { i: 6 }); e(TL.FROM, 'paper', { i: 7 }); e(TL.FROM + .6, 'seal');
+  if (!HI) { e(TL.HINDI + .3, 'paper', { i: 5 }); e(TL.HAPPY, 'paper', { i: 6 }); e(TL.FROM, 'paper', { i: 7 }); e(TL.FROM + .6, 'seal'); }
+  else { e(TL.HINDI, 'paper', { i: 5 }); e(TL.HAPPY, 'paper', { i: 6 }); e(TL.LOGO_LAUNCH, 'launch', { i: 9 }); e(TL.LOGO_BURST, 'logo_burst'); e(TL.LOGO_BURST + .6, 'converge', { dur: TL.LOGO_FORM - TL.LOGO_BURST - .6 }); e(TL.LOGO_FORM, 'shimmer'); e(TL.LOGO_LATIN, 'paper', { i: 7 }); e(TL.LOGO_SEAL, 'seal'); }
   return E;
 }

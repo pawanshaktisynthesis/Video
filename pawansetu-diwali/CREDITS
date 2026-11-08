@@ -1,10 +1,11 @@
 PawanSetu — "One Small Light" · Happy Diwali (46.5 s, 1080×1920, 30 fps)
+Hindi version: pawansetu-diwali-hi.mp4 (build_hi.sh) — Hindi narration and subtitles, Hindi shop signs, and a fireworks logo reveal of the stand-in wordmark पवनसेतु.
 Picture, score and sound design made entirely in code. The PawanSetu name and the "प" seal are stand-ins drawn in code (no supplied logo).
 Shops, people and the street are fictional.
 
 Third-party assets
 - Fonts: Cormorant Garamond (Christian Thalmann) and Tiro Devanagari Hindi (Tiro Typeworks), SIL Open Font License 1.1 — fonts/OFL-*.txt — github.com/google/fonts
-- Voice: Microsoft Edge neural text-to-speech, voice en-IN-NeerjaNeural, via edge-tts (github.com/rany2/edge-tts, LGPL-3.0). Online service: check Microsoft's terms before commercial use.
+- Voice: Microsoft Edge neural text-to-speech, voices en-IN-NeerjaNeural (English) and hi-IN-SwaraNeural (Hindi), via edge-tts (github.com/rany2/edge-tts, LGPL-3.0). Online service: check Microsoft's terms before commercial use.
 - Instruments: zither (koto model), harp and music box are physically modelled in code (Lemo-Opuscar core/audio/pluck.py, MIT);
   tanpura drone, hand drum, ambience and foley are synthesised in this project. No samples, no stock audio.
 - Style guide and render/mux tools: Lemo-Opuscar library (github.com/lemomo-ai/lemo-opuscar), MIT; style text CC BY 4.0.

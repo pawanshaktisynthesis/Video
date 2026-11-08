@@ -23,3 +23,21 @@ export const SUBS = [
   { id: 'L8', t0: 31.0, t1: 35.5, text: 'This Diwali, light up the shops around you.' },
 ];
 export const VOICE = [...SUBS.map(s => ({ id: s.id, t: s.t0 })), { id: 'L9', t: 36.75 }];
+
+// ---------- Hindi version (globalThis.FILM_LANG = 'hi'): Hindi voice + subtitles, Hindi signs, a fireworks logo reveal ----------
+export const LANG = globalThis.FILM_LANG === 'hi' ? 'hi' : 'en';
+export const VOICES = LANG === 'hi' ? 'voices_hi' : 'voices';
+if (LANG === 'hi') {
+  SUBS.splice(0, SUBS.length,
+    { id: 'L1', t0: 1.6, t1: 6.45, text: 'हर दिवाली की शुरुआत, एक छोटे से दीये से होती है।' },
+    { id: 'L2', t0: 6.6, t1: 9.9, text: 'फिर पूरी गली जगमगा उठती है।' },
+    { id: 'L3', t0: 10.4, t1: 14.5, text: 'नुक्कड़ वाले हलवाई की मिठाई।' },
+    { id: 'L4', t0: 15.0, t1: 18.6, text: 'कुम्हार गली से दीये।' },
+    { id: 'L5', t0: 19.4, t1: 23.0, text: 'और आज सुबह के ताज़ा गेंदे के फूल।' },
+    { id: 'L6', t0: 23.2, t1: 26.55, text: 'सब कुछ, आपकी जानी-पहचानी दुकानों से,' },
+    { id: 'L7', t0: 26.7, t1: 30.7, text: 'पवनसेतु के साथ, सीधे आपके घर तक।' },
+    { id: 'L8', t0: 31.0, t1: 35.0, text: 'इस दिवाली, आस-पास की दुकानों को रोशन करें।' });
+  VOICE.splice(0, VOICE.length, ...SUBS.map(s => ({ id: s.id, t: s.t0 })), { id: 'L9', t: 36.4 });
+  Object.assign(TL, { HINDI: 36.3, HAPPY: 37.0, LOGO_LAUNCH: 37.55, LOGO_BURST: 38.25, LOGO_FORM: 39.6, LOGO_PAPER: 39.75, LOGO_LATIN: 39.9, LOGO_SEAL: 40.5, RACK0: 42.0, RACK1: 44.5 });
+  TL.BURSTS = [36.0, 39.75, 41.25, 42.75, 44.25];
+}

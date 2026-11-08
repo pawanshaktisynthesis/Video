@@ -7,9 +7,10 @@ from scipy.ndimage import maximum_filter1d, uniform_filter1d
 D = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, os.environ['LIB'])
 from core.audio.sfx import SR, add, compress, limit, whoosh
 rng = np.random.default_rng(31)
-EV = json.load(open(os.path.join(D, 'events.json'))); DUR = float(EV['dur']); N = int(DUR * SR)
-TL = json.loads(subprocess.check_output(['node', '-e', "import('./timeline.js').then(m=>console.log(JSON.stringify({TL:m.TL,V:m.VOICE})))"], cwd=D))
-VO, TL = TL['V'], TL['TL']
+HI = os.environ.get('FILM_LANG') == 'hi'
+EV = json.load(open(os.path.join(D, 'events_hi.json' if HI else 'events.json'))); DUR = float(EV['dur']); N = int(DUR * SR)
+TL = json.loads(subprocess.check_output(['node', '-e', "globalThis.FILM_LANG=process.env.FILM_LANG;import('./timeline.js').then(m=>console.log(JSON.stringify({TL:m.TL,V:m.VOICE,VD:m.VOICES})))"], cwd=D))
+VO, VD, TL = TL['V'], TL['VD'], TL['TL']
 T = lambda d: np.arange(int(d * SR)) / SR
 def bp(x, lo, hi): return sosfilt(butter(2, [lo, hi], 'band', fs=SR, output='sos'), x)
 def lp(x, f): return sosfilt(butter(2, f, 'low', fs=SR, output='sos'), x)
@@ -79,18 +80,20 @@ for e in sorted(EV['ev'], key=lambda e: e['t']):
     elif ty == 'launch': place(fol, launch(), t, .18, 0)
     elif ty == 'burst': place(fol, burst(1.0 if e['i'] == 0 else .6), t, .55 if e['i'] == 0 else .3, [0, -.4, .4, -.2, .3, 0][e['i']])
     elif ty == 'seal': place(fol, card(), t, .3, .2)
+    elif ty == 'logo_burst': place(fol, burst(1.2), t, .6, 0)
+    elif ty == 'converge': place(fol, fade(whoosh(e['dur'], 1)[::-1], .05, .1), t, .25, 0); place(fol, shimmer(e['dur'] + .3), t, .18, 0)
 for v in VO:
-    y, sr = sf.read(os.path.join(D, 'voices', v['id'] + '.wav')); y = y.mean(1) if y.ndim > 1 else y
+    y, sr = sf.read(os.path.join(D, VD, v['id'] + '.wav')); y = y.mean(1) if y.ndim > 1 else y
     y = soxr.resample(y, sr, SR); y = compress(nrm(y, .9), thr=.3, ratio=3); place(voc, y, v['t'], .6, 0)
 tt = np.arange(N) / SR
 # silence 1: black before the match (room tone only); silence 2: the breath before the burst
 g = np.interp(tt, [0, TL['SIL0'] - .05, TL['SIL0'], TL['BURST'] - .7, TL['BURST'] - .69, DUR], [1, 1, 0, 0, 1, 1])[:, None]
 fol *= np.maximum(g, (tt >= TL['BURST'] - .75)[:, None])   # the launch whistle of the first rocket is the only sound in the breath
-mus, _ = sf.read(os.path.join(D, 'music', 'score.wav')); mus = mus[:N] if len(mus) >= N else np.pad(mus, ((0, N - len(mus)), (0, 0)))
+mus, _ = sf.read(os.path.join(D, 'music', 'score_hi.wav' if HI else 'score.wav')); mus = mus[:N] if len(mus) >= N else np.pad(mus, ((0, N - len(mus)), (0, 0)))
 act = uniform_filter1d(maximum_filter1d((np.abs(voc).max(1) > .02).astype(float), int(.6 * SR)), int(.15 * SR))
 duck = 1 - .5 * act
 mixd = voc * 1.1 + fol * .9 * (1 - .25 * act)[:, None] + amb * .55 * (1 - .4 * act)[:, None] + mus * .55 * duck[:, None]
 for c in range(2): mixd[:, c] = limit(mixd[:, c], .95)
-sf.write(os.path.join(D, 'mix.wav'), mixd.astype(np.float32), SR)
+sf.write(os.path.join(D, 'mix_hi.wav' if HI else 'mix.wav'), mixd.astype(np.float32), SR)
 def rms(a, b, x=mixd): s = x[int(a * SR):int(b * SR)]; return round(20 * np.log10(np.sqrt((s ** 2).mean()) + 1e-9), 1)
 print('mix', DUR, 's | voice', rms(10.4, 12.5, voc * 1.1), '| music under voice', rms(10.4, 12.5, mus * .55 * duck[:, None]), '| silence1', rms(.1, .9), '| silence2', rms(35.4, 35.9), '| burst', rms(36, 37))

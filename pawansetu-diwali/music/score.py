@@ -7,7 +7,8 @@ HERE = os.path.dirname(os.path.abspath(__file__)); FILM = os.path.dirname(HERE)
 sys.path.insert(0, os.environ['LIB'])
 from core.audio import pluck as P
 from core.audio.sfx import SR, add
-TL = json.loads(subprocess.check_output(['node', '-e', "import('./timeline.js').then(m=>console.log(JSON.stringify(m.TL)))"], cwd=FILM))
+TL = json.loads(subprocess.check_output(['node', '-e', "globalThis.FILM_LANG=process.env.FILM_LANG;import('./timeline.js').then(m=>console.log(JSON.stringify(m.TL)))"], cwd=FILM))
+HI = os.environ.get('FILM_LANG') == 'hi'
 DUR = TL['END']; N = int((DUR + 3) * SR); B, BAR = .75, 3.0
 rng = np.random.default_rng(8)
 st = {k: np.zeros((N, 2)) for k in ['drone', 'zit', 'harp', 'box', 'drum']}
@@ -58,10 +59,15 @@ for p in ['D3', 'A3', 'D4', 'F#4', 'A4', 'D5']: harp(p, TL['BURST'] + rng.unifor
 drum(TL['BURST'], .8)
 for t, p in [(36.75, 'D5'), (37.5, 'F#5'), (38.25, 'A5'), (39.0, 'G#5'), (39.75, 'A5'), (41.25, 'F#5'), (42.0, 'D5')]: zit(p, t, .5, 3)
 for t in TL['BURSTS'][1:]: box('D6', t, .3, 2); box('A6', t + .05, .25, 2)
-for i, p in enumerate(['D3', 'A3', 'D4', 'F#4', 'A4', 'D5']): harp(p, 43.5 + i * .2, .45, 4)
+for i, p in enumerate(['D3', 'A3', 'D4', 'F#4', 'A4', 'D5']): harp(p, (44.5 if HI else 43.5) + i * .2, .45, 4)
+if HI:   # logo reveal: a rising music-box glissando while the sparks gather, a full chord when the word forms
+    g0, g1 = TL['LOGO_BURST'] + .6, TL['LOGO_FORM']; notes = ['D5', 'E5', 'F#5', 'G#5', 'A5', 'B5', 'C#6', 'D6', 'E6', 'F#6', 'A6', 'D7']
+    for i, p in enumerate(notes): box(p, g0 + (g1 - g0) * i / len(notes), .28 + .02 * i, 1.6, pan=-.5 + i / len(notes))
+    for p in ['D3', 'A3', 'D4', 'F#4', 'A4', 'D5', 'F#5']: harp(p, g1, .55, 4)
+    box('D6', g1, .5, 3); box('A6', g1 + .03, .4, 3); zit('D5', TL['LOGO_SEAL'], .45, 3)
 mix = sum(st.values()); tt = np.arange(N) / SR
 gate = np.interp(tt, [0, TL['SIL0'] - .4, TL['SIL0'], TL['BURST'] - .01, TL['BURST'], DUR + 3], [1, 1, 0, 0, 1, 1])
 mix = (mix * gate[:, None])[:int(DUR * SR)]
 fo = np.clip((DUR - tt[:len(mix)]) / 2.5, 0, 1); mix *= fo[:, None]
 mix = mix / np.abs(mix).max() * .8
-sf.write(os.path.join(HERE, 'score.wav'), mix.astype(np.float32), SR); print('score.wav', round(len(mix) / SR, 2), 's')
+sf.write(os.path.join(HERE, 'score_hi.wav' if HI else 'score.wav'), mix.astype(np.float32), SR); print('score.wav', round(len(mix) / SR, 2), 's')
