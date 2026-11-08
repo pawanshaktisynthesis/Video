@@ -1,0 +1,8 @@
+SPIN. RESET. — premium fidget spinner, glass product film (31.2 s, 1080×1920, 24 fps)
+The spinner, its case and the three colourways are modelled in code from the owner's reference.png (their own product). Lines from the owner's poster.
+PawanSetu logo (indigo tile, white "P") and pawansetu.in redrawn from pawansetu.in, used by the owner.
+
+Third-party assets
+- Font: Inter Tight (Rasmus Andersson et al.), SIL Open Font License 1.1 — fonts/OFL.txt — github.com/google/fonts
+- 3D: three.js (MIT). Studio lighting/floor (studio.js) and post-processing from the Lemo-Opuscar library (github.com/lemomo-ai/lemo-opuscar), MIT.
+- Music and sound effects: synthesised in this project (music/score.py, mix.py). No samples, no voice.
