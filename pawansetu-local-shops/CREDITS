@@ -1,0 +1,12 @@
+PawanSetu — "Two Streets Away" (40 s, 1080×1920)
+Picture, score and sound design made entirely in code. All numbers on screen are illustrative.
+PawanSetu wordmark is a stand-in drawn in code (no supplied logo). "Sharma Store" and other shop names are fictional.
+
+Third-party assets
+- Font: Jost (Owen Earl / indestructible type*), SIL Open Font License 1.1 — fonts/OFL.txt — github.com/google/fonts/tree/main/ofl/jost
+- Voice: Microsoft Edge neural text-to-speech, voice en-IN-NeerjaNeural, via the edge-tts library (github.com/rany2/edge-tts, LGPL-3.0).
+  Online service: check Microsoft's terms before commercial use.
+- Instruments: kalimba, music box and pizzicato bass are physically modelled in code (Lemo-Opuscar core/audio/pluck.py, MIT);
+  marimba, percussion, ambience and foley are synthesised in this project. No samples, no stock audio.
+- Isometric engine: engine.js from the Lemo-Opuscar library (github.com/lemomo-ai/lemo-opuscar), MIT licence.
+- Speech check: faster-whisper (MIT) with the Whisper small.en model (MIT).

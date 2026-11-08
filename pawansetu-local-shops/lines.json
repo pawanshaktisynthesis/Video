@@ -1,0 +1,60 @@
+[
+ {
+  "id": "L1",
+  "text": "Your customers live just two streets away.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "L2",
+  "text": "But their orders go to a warehouse 30 km away.",
+  "say": "But their orders go to a warehouse thirty kilometres away.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+4%"
+ },
+ {
+  "id": "L3",
+  "text": "PawanSetu builds the bridge back.",
+  "say": "Pawansetu builds the bridge back.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%",
+  "asr": "Pawan Setu builds the bridge back."
+ },
+ {
+  "id": "L4",
+  "text": "A neighbour orders on her phone.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "L5",
+  "text": "Your shop packs it, right off your shelf.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "L6",
+  "text": "A local rider brings it home in minutes.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "L7",
+  "text": "Then the next order. And the next.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "L8",
+  "text": "Every shop on the street, online.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "+0%"
+ },
+ {
+  "id": "L9",
+  "text": "PawanSetu. Your shop, your neighbourhood.",
+  "say": "Pawan Setu. Your shop, your neighbourhood.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ }
+]
