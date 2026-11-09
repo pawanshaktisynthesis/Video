@@ -1,0 +1,59 @@
+[
+ {
+  "id": "T",
+  "text": "One day at a local shop. Nine ways to tell it.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "W",
+  "text": "Five thirty. Before the street wakes, the shutter goes up.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%",
+  "asr": "5.30. Before the street wakes, the shutter goes up."
+ },
+ {
+  "id": "G",
+  "text": "Eleven. A new arrival, straight into the glass case.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "R",
+  "text": "One o'clock. The lunch rush.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "M",
+  "text": "Three. A neighbour orders from her phone.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "I",
+  "text": "The order crosses two streets, and arrives in minutes.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "P",
+  "text": "Six. The after-school quest for sweets.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "L",
+  "text": "Nine. The street goes quiet. One lamp stays lit.",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ },
+ {
+  "id": "E",
+  "text": "One shop. One day. Now online, with PawanSetu.",
+  "say": "One shop. One day. Now online, with Pawansetu.",
+  "asr": "One Shop One Day Now Online with Pawan Setu",
+  "voice": "en-IN-NeerjaNeural",
+  "rate": "-4%"
+ }
+]

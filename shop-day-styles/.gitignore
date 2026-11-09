@@ -1,0 +1,6 @@
+out/
+mix.wav
+music/score.wav
+voices/.cache/
+clips/*/
+__pycache__/

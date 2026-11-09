@@ -1,0 +1,10 @@
+"One Day at a Local Shop" — nine Lemo-Opuscar styles, one story (64 s, 1080×1920, 24 fps)
+New chapters (Swiss Motion Graphics, Watercolor Brush, 1920s Silent Film, Risograph Print, 16-bit Pixel RPG) are drawn in this project.
+Reused chapters are re-rendered from this repository's own films: pawansetu-explainer (Mid-century Cartoon), pawansetu-local-shops (Isometric Infographic), pawansetu-diwali (Paper-cut Lightbox), spinner-glass (Glass Product Render) — see their CREDITS.
+PawanSetu logo and pawansetu.in redrawn from pawansetu.in, used by the owner. Shop and people are fictional.
+
+Third-party assets
+- Fonts (SIL Open Font License 1.1, fonts/OFL-*.txt, github.com/google/fonts): Inter, Caveat, Cormorant Garamond.
+- Voice: Microsoft Edge neural text-to-speech, en-IN-NeerjaNeural, via edge-tts (LGPL-3.0). Check Microsoft's terms before commercial use.
+- Music and sounds: synthesised here (music/score.py, mix.py) with Lemo-Opuscar's pluck models (MIT). No samples.
+- Speech check: faster-whisper (MIT), Whisper small.en (MIT).
