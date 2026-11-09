@@ -6,7 +6,7 @@ export const CH = [
   { id: 'silent', t0: 12.4, t1: 18.4, style: '1920s Silent Film', cat: 'Cinema & Eras' },
   { id: 'glass', t0: 18.4, t1: 24.9, style: 'Glass Product Render', cat: 'Materials & 3D', clip: 'glass' },
   { id: 'riso', t0: 24.9, t1: 30.9, style: 'Risograph Print', cat: 'Print & Printmaking' },
-  { id: 'cartoon', t0: 30.9, t1: 37.4, style: 'Mid-century Cartoon', cat: 'Cartoon & Anime', clip: 'cartoon' },
+  { id: 'cartoon', t0: 30.9, t1: 37.4, style: 'Mid-century Cartoon', cat: 'Cartoon & Anime', clip: 'cartoon2' },
   { id: 'iso', t0: 37.4, t1: 43.4, style: 'Isometric Infographic', cat: 'Information & Keynote', clip: 'iso' },
   { id: 'pixel', t0: 43.4, t1: 50.4, style: '16-bit Pixel RPG', cat: 'Games' },
   { id: 'lantern', t0: 50.4, t1: 56.3, style: 'Paper-cut Lightbox', cat: 'East Asian Traditions', clip: 'lantern' },

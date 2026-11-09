@@ -6,7 +6,7 @@ export LIB
 HERE=$(cd "$(dirname "$0")" && pwd)
 PY="$LIB/.venv/bin/python"; SZ="--size 1080x1920"; mkdir -p "$HERE/out"
 sh "$HERE/tools/excerpts.sh"
-for c in glass cartoon iso lantern; do mkdir -p "$HERE/clips/$c" && rm -f "$HERE/clips/$c"/n_*.jpg && ffmpeg -v error -y -i "$HERE/clips/$c.mp4" -q:v 3 "$HERE/clips/$c/n_%04d.jpg"; done
+for c in glass cartoon2 iso lantern; do mkdir -p "$HERE/clips/$c" && rm -f "$HERE/clips/$c"/n_*.jpg && ffmpeg -v error -y -i "$HERE/clips/$c.mp4" -q:v 3 "$HERE/clips/$c/n_%04d.jpg"; done
 "$PY" "$HERE/tools/tts_proxy.py" "$LIB/core/tts/tts_zh.py" "$HERE/lines.json" "$HERE/voices"
 "$PY" "$LIB/core/tts/asr_check.py" "$HERE/lines.json" "$HERE/voices" --model small.en
 "$PY" "$HERE/music/score.py"
